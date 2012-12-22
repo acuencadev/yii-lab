@@ -56,6 +56,7 @@ class Producto extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'Categoria' => array(self::BELONGS_TO, 'Categoria', 'categoria_id'),
 		);
 	}
 
@@ -66,8 +67,8 @@ class Producto extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'descripcion' => 'Descripcion',
-			'categoria_id' => 'Categoria',
+			'descripcion' => 'Descripción',
+			'categoria_id' => 'Categoría',
 			'existencia' => 'Existencia',
 			'precio' => 'Precio',
 		);

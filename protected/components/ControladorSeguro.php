@@ -6,6 +6,7 @@ class ControladorSeguro extends Controller
 	{
 		return array(
 			'accessControl',
+			'postOnly + delete'
 		);
 	}
 	
