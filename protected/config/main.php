@@ -4,6 +4,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Lab de Yii',
 	'preload'=>array('log'),
+	'language' => 'es',
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
@@ -11,7 +12,7 @@ return array(
 	'modules'=>array(
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'yiilab',			
+			'password'=>'yiilab',
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
 	),
@@ -33,7 +34,7 @@ return array(
 			'username' => 'yiilab',
 			'password' => 'yiilab',
 			'charset' => 'utf8',
-		),		
+		),
 		'errorHandler'=>array(
 			'errorAction'=>'site/error',
 		),

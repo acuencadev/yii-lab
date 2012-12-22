@@ -30,8 +30,9 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Categorías', 'url'=>array('/categorias/index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Productos', 'url'=>array('/productos/index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'About', 'url'=>array('/site/about')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
@@ -47,10 +48,8 @@
 
 	<div class="clear"></div>
 
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+	<div id="footer">		
+		<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es"><img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Yii lab</span> por <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/acuenca/yii-lab" property="cc:attributionName" rel="cc:attributionURL">Amador Cuenca</a> se encuentra bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es">Licencia Creative Commons Atribución-CompartirIgual 3.0 Unported</a>.
 	</div><!-- footer -->
 
 </div><!-- page -->

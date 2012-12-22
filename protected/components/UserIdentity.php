@@ -2,18 +2,34 @@
 
 class UserIdentity extends CUserIdentity
 {
+	private $_id;
 	public function authenticate()
 	{
-		$users=array(
-			'demo'=>'demo',
-			'admin'=>'admin',
-		);
-		if(!isset($users[$this->username]))
+		$model = Usuario::model()->findByAttributes(array(
+			'nick' => $this->username,
+		));
+		
+		if ($model === null)
+		{
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		else if($users[$this->username]!==$this->password)
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
+		}
 		else
-			$this->errorCode=self::ERROR_NONE;
+		{
+			if (MD5($this->password) !== $model->password)
+			{
+				$this->errorCode=self::ERROR_PASSWORD_INVALID;
+			}
+			else
+			{
+				$this->_id = $model->id;
+				$this->errorCode=self::ERROR_NONE;
+			}
+		}
 		return !$this->errorCode;
 	}
+	
+	public function getId()
+    {
+        return $this->_id;
+    }
 }

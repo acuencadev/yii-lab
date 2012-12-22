@@ -28,3 +28,5 @@ CREATE TABLE IF NOT EXISTS `tbl_producto` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `descripcion` (`descripcion`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+INSERT INTO tbl_usuario VALUES ('yiilab', '8f381a96b6482f40a2d061dd1ea07d81');
